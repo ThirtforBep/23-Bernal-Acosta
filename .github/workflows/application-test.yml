@@ -1,0 +1,26 @@
+name:  Continuous Integrations
+on:
+  pull_request:
+    branches: ['23-Bernal-Acosta']
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pull from master
+        uses: actions/checkout@v4
+
+      - name: Installing Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Compiling
+        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+        with:
+          arguments: build

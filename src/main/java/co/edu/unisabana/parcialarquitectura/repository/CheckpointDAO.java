@@ -8,6 +8,7 @@ import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+
 @Repository
 @AllArgsConstructor
 public class CheckpointDAO implements CheckpointPort {
